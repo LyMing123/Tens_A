@@ -86,24 +86,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textPR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="140dp"
-        android:text="Pulse Rate:"
+        android:text="Pulse Rate: 1 Hz"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="190dp"
-        android:text="Pulse Width:"
+        android:text="Pulse Width: 25 μs"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,12 +122,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="90dp"
-        android:text="Current:"
+        android:text="Current: 0 mA"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,8 +141,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="210dp"
         android:layout_marginEnd="32dp"
-        android:max="10"
-        android:progress="3"
+        android:max="9"
+        android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,8 +156,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="160dp"
         android:layout_marginEnd="32dp"
-        android:max="10"
-        android:progress="3"
+        android:max="24"
+        android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -171,8 +171,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="110dp"
         android:layout_marginEnd="32dp"
-        android:max="10"
-        android:progress="3"
+        android:max="60"
+        android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,12 +213,13 @@
         android:layout_width="0dp"
         android:layout_height="135dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="370dp"
         android:layout_marginEnd="32dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="372dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
