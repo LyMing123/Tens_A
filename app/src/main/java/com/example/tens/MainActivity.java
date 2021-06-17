@@ -3,6 +3,7 @@ package com.example.tens;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,10 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -20,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     SeekBar current, P_rate, P_width;
     TextView textC, textPR, textPW, tMode;
     Button Mode1, Mode2, Mode3, Save, Retrieve, Delete;
+
 
 
     @Override
@@ -151,6 +157,44 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+    }
+    private class SendReceive extends Thread{
+        private final BluetoothSocket bsocket;
+        private final InputStream input;
+        private final OutputStream output;
+
+        public SendReceive (BluetoothSocket socket){
+            bsocket = socket;
+            InputStream tempIn=null;
+            OutputStream tempOut=null;
+
+            try {
+                tempIn=bsocket.getInputStream();
+                tempOut=bsocket.getOutputStream();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            input = tempIn;
+            output = tempOut;
+        }
+
+        public void run(){
+            byte[] buffer = new byte[1024];
+            int bytes;
+
+            while(true){
+                try {
+                    bytes=input.read(buffer);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
     }
 }
