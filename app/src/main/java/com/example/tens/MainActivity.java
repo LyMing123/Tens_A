@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -13,10 +15,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    Switch bt;
+    Switch bt,On;
     BluetoothAdapter BAdapter;
     SeekBar current, P_rate, P_width;
-    TextView textC, textPR, textPW;
+    TextView textC, textPR, textPW, tMode;
+    Button Mode1, Mode2, Mode3, Save, Retrieve, Delete;
 
 
     @Override
@@ -32,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
         textC = findViewById(R.id.textC);
         textPR = findViewById(R.id.textPR);
         textPW = findViewById(R.id.textPW);
+        On = findViewById(R.id.On);
+        Mode1 = findViewById(R.id.Mode1);
+        Mode2 = findViewById(R.id.Mode2);
+        Mode3 = findViewById(R.id.Mode3);
+        Save = findViewById(R.id.Save);
+        Retrieve = findViewById(R.id.Retrieve);
+        Delete = findViewById(R.id.Delete);
+        tMode = findViewById(R.id.tMode);
 
 
 
@@ -115,6 +126,29 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Mode1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tMode.setText("Mode: 1");
+            }
+        });
+
+        Mode2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tMode.setText("Mode: 2");
+            }
+        });
+
+        Mode3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tMode.setText("Mode: 3");
+            }
+        });
+
+
 
 
 
